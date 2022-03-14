@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -50,6 +52,7 @@ class HomePage extends StatelessWidget {
         ),
       ),
     );
+    ;
   }
 }
 
@@ -69,6 +72,7 @@ Widget _buildBody() {
   return SingleChildScrollView(
       child: Column(
     children: <Widget>[
+      _headerImage(),
       _weatherDescription(),
       _temperature(),
       Divider(),
@@ -106,7 +110,7 @@ Row _temperature() {
                 children: <Widget>[
                   Text(
                     'Day',
-                    style: TextStyle(color: Colors.grey),
+                    style: TextStyle(color: Colors.orange),
                   ),
                 ],
               )
@@ -120,7 +124,7 @@ Row _temperature() {
 
 Padding _weatherDescription() {
   return Padding(
-    padding: EdgeInsets.all(77),
+    padding: EdgeInsets.all(10),
     child: Text(
       'Thuesday - June 21',
       style: TextStyle(
@@ -133,11 +137,11 @@ Padding _weatherDescription() {
 
 Padding _textDisrip() {
   return Padding(
-    padding: EdgeInsets.only(left: 37, top: 100),
+    padding: EdgeInsets.only(left: 29, top: 37),
     child: Text(
       'Данная страница показывает погоду по городу Москва на ближайшие 9 дней, мы очень рады, что вы пользуйтесь нашим приложение. Спасибо.',
       style: TextStyle(
-        fontSize: 15.0,
+        fontSize: 15.5,
         color: Colors.black,
       ),
     ),
@@ -206,11 +210,16 @@ Row _stark() {
   );
 }
 
-//Image _headerImage() {
-//  return Image(
-//    image: NetworkImage(
-//        'https://www.polsov.com/upload/014/u1405/0/a/a5192ae9.jpg'),
-//    fit: BoxFit.cover,
-//  );
-//}
+Image _headerImage() {
+  return Image(
+    image: NetworkImage(
+        'https://imgfon.ru/Img/Crop/2560x1440/City/arhitektura-reka-moskva-kreml-gorod.jpg?img.1'),
+    fit: BoxFit.cover,
+  );
+}
 
+Image _topimage() {
+  return Image(
+      image: NetworkImage(
+          'https://proprikol.ru/wp-content/uploads/2020/04/kartinki-vselennoj-3.jpg'));
+}
